@@ -1,7 +1,9 @@
 name: Telegram notify action
 
 on:
+  # Triggers the workflow on push or pull request events but only for the master branch
   push:
+
 #  pull_request_review_comment:
 #    types: [ created ]
 jobs:
