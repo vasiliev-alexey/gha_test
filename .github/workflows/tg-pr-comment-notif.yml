@@ -21,9 +21,9 @@ jobs:
 #             ${{ github.event.comment.body }}.
 
 
-  - name: Telegram deploy finished without problems
-    uses: appleboy/telegram-action@master
-    with:
-      to: ${{ secrets.TG_TO }}
-      token: ${{ secrets.TG_TOKEN }}
-      args: Everything work perfectly, you can be happy and rest.
+    - name: Telegram deploy finished without problems
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TG_TO }}
+        token: ${{ secrets.TG_TOKEN }}
+        args: Everything work perfectly, you can be happy and rest.
