@@ -1,7 +1,7 @@
 name: Telegram notify action
 
 on:
-  push
+  push:
 #  pull_request_review_comment:
 #    types: [ created ]
 jobs:
