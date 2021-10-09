@@ -10,9 +10,9 @@ jobs:
     steps:
 
 
-      - name: Run a one-line script
-        run: echo ${{ toJson(github.event.pull_request) }}
-
+#      - name: Run a one-line script
+#        run: echo ${{ toJson(github.event.pull_request) }}
+#
 
       - name: 'Send telegram notification'
         uses: appleboy/telegram-action@master
@@ -22,5 +22,6 @@ jobs:
           message: |
             The ${{ github.repository }} PR commnets.
              ${{ github.event.comment.body }}.
-             ${{ github.event.pull_request.number }}.
+             ${{ github.event.pull_request.number }} -  ${{ github.event.pull_request.title }}.
+             commented by   ${{ github.event.pull_request.user.login }}
 
