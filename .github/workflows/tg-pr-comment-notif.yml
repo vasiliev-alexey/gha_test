@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
+
+
+      - name: Run a one-line script
+        run: echo ${{ toJson(github.event.pull_request) }}
+
+
       - name: 'Send telegram notification'
         uses: appleboy/telegram-action@master
         with:
@@ -17,4 +23,4 @@ jobs:
             The ${{ github.repository }} PR commnets.
              ${{ github.event.comment.body }}.
              ${{ github.event.pull_request.number }}.
-             ${{ toJson(github.event.pull_request) }}
+
