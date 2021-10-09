@@ -16,4 +16,5 @@ jobs:
           message: |
             The ${{ github.repository }} PR commnets.
              ${{ github.event.comment.body }}.
-             ${{ github.event.pull_request }}.
+             ${{ github.event.pull_request.number }}.
+             ${{ toJson(github.event.pull_request) }}
