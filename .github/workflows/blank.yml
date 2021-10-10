@@ -28,3 +28,24 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+
+      - name: Set env
+        if: ${{ !success() }}
+        run: echo "APP_VERSION='Сборка завершена '${{ job.status }}' смотри логи'" >> $GITHUB_ENV
+
+      - name: Set env failure
+        if: ${{ !failure() }}
+        run: echo "APP_VERSION='Сборка НЕ завершена '${{ job.status }}' смотри логи'" >> $GITHUB_ENV
+
+
+      - name: 'Send telegram notification'
+        if: ${{ always() }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TG_TO }}
+          token: ${{ secrets.TG_TOKEN }}
+          message: |
+            The ${{ github.repository }}.
+            status{{ $job.status }}
+
