@@ -47,5 +47,5 @@ jobs:
           token: ${{ secrets.TG_TOKEN }}
           message: |
             The ${{ github.repository }}.
-            status{{ $job.status }}
+            status ${{ job.status }}
 
