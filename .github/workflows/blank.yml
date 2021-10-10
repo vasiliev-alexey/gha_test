@@ -47,7 +47,8 @@ jobs:
           token: ${{ secrets.TG_TOKEN }}
           message: |
             The ${{ github.repository }}.
-            wf: ${env.GITHUB_WORKFLOW}}
-            event: ${{env.GITHUB_EVENT_NAME}}
+            wf: ${{github.workflow}}
+            action: ${{github.action}}
+            event: ${{github.event.name}}
             status: ${{job.status}} ${{ (job.status == 'success' && '🚀 🦉 🚀' ) || '🔥🔥 ⛔ 🔥🔥'}}
 
