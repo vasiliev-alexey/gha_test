@@ -11,7 +11,7 @@ jobs:
       - name: 'out'
         run: |
               echo ${{ toJson(github.event.review ) }}
-         echo "- in ${{ github.event.inputs.home }}!"
+
       - name: 'Send telegram notification'
         uses: appleboy/telegram-action@master
         with:
