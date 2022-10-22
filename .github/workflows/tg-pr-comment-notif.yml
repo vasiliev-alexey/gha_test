@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
-      - name: 'out'
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github.event) }}
         run: |
-              echo ${{ toJson(github.event ) }}
-
+          echo "$GITHUB_CONTEXT"
       - name: 'Send telegram notification'
         uses: appleboy/telegram-action@master
         with:
