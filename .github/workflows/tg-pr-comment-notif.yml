@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
+      - name: 'out'
+        run: |
+              echo ${{ toJson(github.event.review ) }}
+         echo "- in ${{ github.event.inputs.home }}!"
       - name: 'Send telegram notification'
         uses: appleboy/telegram-action@master
         with:
