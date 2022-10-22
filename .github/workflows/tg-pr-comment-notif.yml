@@ -1,6 +1,7 @@
 name: Telegram notify action
 
 on:
+  issue_comment:
   pull_request:
     types:
       - edited
